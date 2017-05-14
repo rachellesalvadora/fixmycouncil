@@ -16,7 +16,7 @@ class Problem extends Model
      */
     public function postcode()
     {
-        return $this->hasOne('App\Models\Postcode');
+        return $this->belongsTo('App\Models\Postcode');
     }
 
     /**

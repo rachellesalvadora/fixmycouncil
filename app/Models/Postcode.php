@@ -20,10 +20,18 @@ class Postcode extends Model
     }
 
     /**
+     * Get the associated problems for postcode
+     */
+    public function problems()
+    {
+        return $this->hasMany('App\Models\Problem');
+    }
+
+    /**
      * Get the associated council for postcode
      */
     public function council()
     {
-        return $this->hasOne('App\Models\Council');
+        return $this->belongsTo('App\Models\Council');
     }
 }

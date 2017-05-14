@@ -16,6 +16,6 @@ class Update extends Model
      */
     public function problem()
     {
-        return $this->hasOne('App\Models\Problem');
+        return $this->belongsTo('App\Models\Problem');
     }
 }
