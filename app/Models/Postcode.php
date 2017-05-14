@@ -18,20 +18,4 @@ class Postcode extends Model
     {
         return $this->hasMany('App\Models\Suburb');
     }
-
-    /**
-     * Get the associated problems for postcode
-     */
-    public function problems()
-    {
-        return $this->hasMany('App\Models\Problem');
-    }
-
-    /**
-     * Get the associated council for postcode
-     */
-    public function council()
-    {
-        return $this->hasMany('App\Models\Council');
-    }
 }

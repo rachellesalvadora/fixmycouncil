@@ -12,10 +12,10 @@ class Council extends Model
     protected $table = 'councils';
 
     /**
-     * Return associated postcodes for council
+     * Return associated suburbs for council
      */
-    public function postcode()
+    public function suburbs()
     {
-        return $this->hasMany('App\Models\Postcode');
+        return $this->hasMany('App\Models\Suburb');
     }
 }

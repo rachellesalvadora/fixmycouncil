@@ -14,9 +14,9 @@ class Problem extends Model
     /**
      * Get the postcode for the problem
      */
-    public function postcode()
+    public function suburb()
     {
-        return $this->belongsTo('App\Models\Postcode');
+        return $this->belongsTo('App\Models\suburb');
     }
 
     /**

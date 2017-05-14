@@ -18,4 +18,17 @@ class Suburb extends Model
     {
         return $this->belongsTo('App\Models\Postcode');
     }
+
+    public function council()
+    {
+        return $this->belongsTo('App\Models\Council');
+    }
+
+    /**
+     * Get the associated problems for postcode
+     */
+    public function problems()
+    {
+        return $this->hasMany('App\Models\Problem');
+    }
 }
