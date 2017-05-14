@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProblemsTable extends Migration
+class CreateUpdatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateProblemsTable extends Migration
      */
     public function up()
     {
-        // Create problems table
-        Schema::create('problems', function (Blueprint $table) {
+        // Create updates table
+        Schema::create('updates', function (Blueprint $table) {
             $table->increments('id')->unique();
+            $table->integer('problem_id')->unsigned();
+            $table->foreign('problem_id')->references('id')->on('problems')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
             $table->binary('image');
-            $table->integer('status');
             $table->string('person_name');
             $table->timestamps();
         });
@@ -32,7 +33,7 @@ class CreateProblemsTable extends Migration
      */
     public function down()
     {
-        // Delete problems table
-        Schema::dropIfExists('problems');
+        // Delete updates table
+        Schema::dropIfExists('updates');
     }
 }

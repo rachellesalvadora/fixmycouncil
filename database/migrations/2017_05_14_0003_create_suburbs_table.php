@@ -16,6 +16,8 @@ class CreateSuburbsTable extends Migration
         // Create suburbs table
         Schema::create('suburbs', function (Blueprint $table) {
             $table->increments('id')->unique();
+            $table->integer('postcode_id')->unsigned();
+            $table->foreign('postcode_id')->references('id')->on('postcodes')->onDelete('cascade');
             $table->string('name');
             $table->timestamps();
         });
