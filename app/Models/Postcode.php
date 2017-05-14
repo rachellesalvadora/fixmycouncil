@@ -32,6 +32,6 @@ class Postcode extends Model
      */
     public function council()
     {
-        return $this->belongsTo('App\Models\Council');
+        return $this->hasMany('App\Models\Council');
     }
 }
