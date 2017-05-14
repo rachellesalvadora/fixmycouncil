@@ -18,6 +18,8 @@ class CreateSuburbsTable extends Migration
             $table->increments('id')->unique();
             $table->integer('postcode_id')->unsigned();
             $table->foreign('postcode_id')->references('id')->on('postcodes')->onDelete('cascade');
+            $table->integer('council_id')->unsigned();
+            $table->foreign('council_id')->references('id')->on('councils')->onDelete('cascade');
             $table->string('name');
             $table->timestamps();
         });

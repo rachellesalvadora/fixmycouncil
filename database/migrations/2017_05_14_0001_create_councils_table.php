@@ -17,6 +17,15 @@ class CreateCouncilsTable extends Migration
         Schema::create('councils', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('name');
+            $table->string('address');
+            $table->string('postal');
+            $table->string('postal_suburb');
+            $table->string('suburb_town');
+            $table->string('postcode');
+            $table->string('phone');
+            $table->string('fax');
+            $table->string('email');
+            $table->string('website');
             $table->timestamps();
         });
     }

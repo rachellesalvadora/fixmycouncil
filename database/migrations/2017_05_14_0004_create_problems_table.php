@@ -16,8 +16,8 @@ class CreateProblemsTable extends Migration
         // Create problems table
         Schema::create('problems', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->integer('postcode_id')->unsigned();
-            $table->foreign('postcode_id')->references('id')->on('postcodes')->onDelete('cascade');
+            $table->integer('suburb_id')->unsigned();
+            $table->foreign('suburb_id')->references('id')->on('suburbs')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
             $table->binary('image');
