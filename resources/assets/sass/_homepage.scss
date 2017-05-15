@@ -1,0 +1,38 @@
+.homepage__intro{
+    float: left;
+    width: 100%;
+    background: $white;
+    padding: 20px 0;
+}
+
+.homepage__steps {
+    float: left;
+    width: 100%;
+    background: $white;
+    padding: 20px 0;
+
+    .steps__description {
+        padding: 20px 0;
+
+        .steps__caption {
+            text-align: center;
+            font-weight: bold;
+            font-size: 21px;
+            padding-bottom: 25px;
+        }
+
+        .col-md-4 {
+            text-align: center;
+        }
+    }
+
+    .steps__button {
+        text-align: center;
+    }
+}
+
+footer {
+    float: left;
+    width: 100%;
+    padding: 20px 0;
+}
