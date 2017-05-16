@@ -1,0 +1,38 @@
+.steps {
+    padding-bottom: 30px;
+
+    &.step1 {
+
+    }
+
+    &.step2 {
+
+    }
+
+    &.step3 {
+
+    }
+}
+
+.step__1--form {
+
+}
+
+.step__2--form {
+    input[type="radio"] {
+        float: left;
+        width: 20px;
+    }
+}
+
+.step__3--form {
+    fieldset {
+        float: left;
+        width: 100%;
+
+        .form-group {
+            float: left;
+            width: 100%;
+        }
+    }
+}
