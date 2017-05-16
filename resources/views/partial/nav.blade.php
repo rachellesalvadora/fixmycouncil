@@ -6,25 +6,25 @@
         <a class="navbar-brand hidden-md-up" href="#">Menu</a>
         <div class="collapse navbar-collapse" id="headerMenu">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item {{ Request::is('/') ? 'active' : null }}">
                     <a class="nav-link" href="{{ route('home.page') }}">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is('*report*') ? 'active' : null }}">
                     <a class="nav-link" href="{{ route('report.step1') }}">Report a problem</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('view.problem') }}">View Problems</a>
+                <li class="nav-item {{ Request::is('*problems*') ? 'active' : null }}">
+                    <a class="nav-link " href="{{ route('view.problem') }}">View Problems</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about.page') }}">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('faq.page') }}">FAQ</a>
-                </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is('*council*') ? 'active' : null }}">
                     <a class="nav-link" href="{{ route('council.page') }}">Councils</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is('*about*') ? 'active' : null }}">
+                    <a class="nav-link" href="{{ route('about.page') }}">About</a>
+                </li>
+                <li class="nav-item {{ Request::is('*faq*') ? 'active' : null }}">
+                    <a class="nav-link" href="{{ route('faq.page') }}">FAQ</a>
+                </li>
+                <li class="nav-item {{ Request::is('*contact*') ? 'active' : null }}">
                     <a class="nav-link" href="{{ route('contact.page') }}">Contact</a>
                 </li>
             </ul>
