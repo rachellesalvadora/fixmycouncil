@@ -58,13 +58,13 @@ class ReportController extends Controller
             return redirect()->route('report.step2');
         }
 
-        $suburbName = $request->input('suburbName');
+        $suburbName = Suburb::find($suburbId);
         $postcodeSubmitted = $request->input('postcodeSubmitted');
 
         return view('pages/step3')->with(
             [
                 'postcode' => $postcodeSubmitted,
-                'suburbName' => $suburbName,
+                'suburbName' => $suburbName->name,
                 'suburbId' => $suburbId
             ]
         );
