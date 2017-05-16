@@ -7,44 +7,53 @@
     <div class="site__heading">
         <div class="container">
             <h1 class="display-3 hero__title">Fix My Council - Step 1</h1>
-            <p class="hero__description">
-            Enter your postcode to get a list of Suburbs and Councils.
-            </p>
         </div>
     </div>
 
     <div class="content__container">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 step1">
-                    <div class="col-md-12">
-                        @if(Session::has('message'))
-                            <p class="alert alert-danger">{{ Session::get('message') }}</p>
-                        @endif
+                <div class="col-md-12 page__description">
+                    <p>
+                        To get started please tell provide us with your postcode.
+                    </p>
+                </div>
+            </div>
 
-                        <h2>Step 1</h2>
-                        <p>Enter your postcode.</p>
-                        <form class="form-inline my-2 my-lg-0" method="post" action="{{ route('report.step2') }}">
-                            {{ csrf_field() }}
-                            <input class="form-control mr-sm-2" type="text" placeholder="Postcode" name="postcode">
-                            <button class="btn btn-outline-success my-2 my-sm-0 hero__search" type="submit">Search</button>
-                        </form>
-                    </div>
+            <div class="row">
+                <div class="col-md-3 steps steps__1">
+                    @if(Session::has('message'))
+                        <p class="alert alert-danger">{{ Session::get('message') }}</p>
+                    @endif
 
-                    <div class="col-md-12">
-                        <h2>Step 2</h2>
-                        <p>Once you've entered your postcode you'll be presented with a suburb and the related council.</p>
-                    </div>
+                    <h2>Step 1</h2>
+                    <p>Enter your postcode.</p>
+                    <form class="form my-2 my-lg-0 step__1--form" method="post" action="{{ route('report.step2') }}">
+                        {{ csrf_field() }}
+                        <fieldset class="form-group">
+                            <div class="form-group">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Postcode" name="postcode" required>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-outline-success my-2 my-sm-0 hero__search" type="submit">Search</button>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
 
-                <div class="col-md-7">
+                <div class="col-md-4 steps steps__1">
+                    <h2>Step 2</h2>
+                    <p>Once you've entered your postcode you'll be presented with a suburb and the related council.</p>
+                </div>
+
+                <div class="col-md-5 steps steps__1">
                     <h2>Step 3</h2>
                     <p>You'll be able to fill in this form once you've provided a postcode and suburb.</p>
-                    <form class="form-inline my-2 my-lg-0" method="post" action="{{ route('report.submit') }}">
+                    <form class="form my-2 my-lg-0 step__3--form" method="post" action="{{ route('report.submit') }}">
                         <fieldset class="form-group" disabled>
                             <div class="form-group">
                                 <label for="problemTitle">Title</label>
-                                <input type="text" class="form-control" id="problemTitle" aria-describedby="titleHelp" placeholder="Enter email">
+                                <input type="text" class="form-control" id="problemTitle" aria-describedby="titleHelp" placeholder="Title">
                                 <small id="titleHelp" class="form-text text-muted">
                                     Give us a brief title of the problem
                                 </small>
