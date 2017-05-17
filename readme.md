@@ -12,6 +12,14 @@ This website allows access for community to watch over their own streets and be 
 ********
 Demo available at: <a href="https://fixmycouncil.rachellesalvadora.com" target="_blank">fixmycouncil.rachellesalvadora.com</a>
 
+### TODOs / Things I want to finish / Work in progress
+***********************************
+Since I haven't had as much on this as I would have liked I have the following TODOs / features that I wanted to get finished:
+
+* Updating a problem (Add a comment / image to an existing problem)
+* Setting a status on problem (fixed / pending / broken)
+* Redirecting users to the council page they've just submitted a problem to
+
 ### Built With
 ********************
 <ul>
