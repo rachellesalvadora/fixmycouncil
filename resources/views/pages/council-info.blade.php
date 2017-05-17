@@ -56,7 +56,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4>Problems</h4>
-                    @if ($council->problems->count() > 1)
+                    @if ($council->problems->count() >= 1)
                         @foreach($council->problems as $problem)
                             <ul>
                                 <li><h5>{{ $problem->title}}</h5></li>
