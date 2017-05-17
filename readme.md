@@ -1,51 +1,130 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+****************************************
+********************
+# Fix My Council
+********************
+Fix My Council aims to allow the people to report problems to their respective council and allow the council to view the issues around their municipality.
+This website allows access for community to watch over their own streets and be able to easily communicate the problems to their council.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+### Built With
+********************
+<ul>
+    <li>Bootstrap v4</li>
+    <li>Laravel 5.4</li>
+    <li>MySQL</li>
+</ul>
 
-## About Laravel
+### Environment
+********************
+<ul>
+    <li>Web Server</li>
+</ul>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+### Operating Instructions
+********************
+<ul>
+    <li>A step by step series of examples that tell you have to get a development env running</li>
+</ul>
+Say what the step will be
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Give the example
+And repeat
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+until finished
+End with an example of getting some data out of the system or using it for a little demo
 
-## Learning Laravel
+### Research / Problem
+********************
+Government Websites found in relation to gathering information from the government/services:
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+<ul>
+    <li>http://abr.business.gov.au/</li>
+    <li>https://www.humanservices.gov.au/</li>
+    <li>http://www.health.gov.au/</li>
+    <li>https://knowyourcouncil.vic.gov.au</li>
+</ul>
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+I compared the pros and cons of these websites and found that they provide good information to the community but there isn't a section where people can report a problem or connect directly via the website. 
 
-## Laravel Sponsors
+I have researched a website that allow people to communicate to their council regarding the issues that they want to be resolved and found <strong><a href="http://www.snapsendsolve.com/" target="_blank">Snap Send Solve</strong>.
+<strong><a href="http://www.snapsendsolve.com/" target="_blank">Snap Send Solve</strong>is a mobile application that allows you to take a photo and send it to your respective council using your email account and there's no way to view the reported issues.
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+### Overview
+********************
+The application is designed to get ask the user to go to 3 stepsto report a problem.
+For step 1, the system will ask the user for their postcode and if there isn't a suburb related to the input, the system will output an error message saying "This postcode doesn't exit! Try again.". The system will not accept an input or proceedto next step until there is a council corresponding to the number combination the the user have input.
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
+For step 2, the user will have to select a suburb related to thepostcode that they have entered because this is the way which the system identify which council the user belongs to.
 
-## Contributing
+There are multiple steps on step 3 and they are:
+<ul>
+    <li>Title
+    <ul>
+        <li>
+            Title is the name of the problem or it could be a very short description of the problem. E.g: Pothole, Street where they encounter the problem, broken street sign,etc.,
+        </li>
+    </ul>
+    </li>
+    <li>Description
+    <ul>
+        <li>
+            This section is for the user to further explain the problem or add more information regarding the problem that they have encounter. This area will be most helpful for the address or street which the problem is, or the user could also explain the trouble that the problem is causing them, or what would change or how it would help them if the certain issue/problem is fixed, etc.
+        </li>
+    </ul>
+    </li>
+    <li>Image
+    <ul>
+        <li>
+            The system also allows the user to add an image or attachment that is related to the problem.
+        </li>
+    </ul>
+    </li>
+    <li>Name
+        <ul>
+            <li>
+             The system would also require a user to enter their name as part of the reporting process.
+            </li>
+        </ul>
+    </li>
+</ul>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+### Usage Instructions
+********************
+In summary, <strong>Fix My Council</strong> is a web version of Snap Send Solve but so much more.
+In only 3 steps you will be able to report to your council using only the website.
+First: you enter your postcode. Second: select your suburb. Third and last step: input the problem details.
+You may also view what other people submitted in your council.
 
-## Security Vulnerabilities
+### Testing Instructions
+********************
+!!! To test for the main functions of <strong>Fix My Council</strong>, please fo through the 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### Author
+********************
+Created by:<br/>
+<ul>
+    <li>Rachelle Salvadora</li>
+</ul>
 
-## License
+Started on 13th May 2017<br/>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+### License
+********************
+Enter License here
+
+****************************************
+
+****************************************
+### ACKNOWLEDGEMENTS
+Inspirations:
+<ul>
+    <li>https://knowyourcouncil.vic.gov.au/</li>
+    <li>http://www.snapsendsolve.com/<li>
+</ul>
+
+### NOTES
+This web application is created as part of <a href="http://www.codeforvictoria.org/" target="_blank">Code of Australia</a> Fellowship challenge
+Custom built using the technologies listed above in the <strong>Built With</strong>s section.
+
+### VERSIONS
+Fix My Council v.1.0
