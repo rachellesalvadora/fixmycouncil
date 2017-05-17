@@ -31,11 +31,17 @@ class ReportController extends Controller
 
         // Redirect to step 1 if postcode doesn't exist
         if (!$postcode) {
-            Session::flash('message', 'This postcode doesn\'t exist'); 
+            Session::flash('message', 'This postcode doesn\'t exist! try again.'); 
             return redirect()->route('report.step1');
         }
 
         $suburbs = Suburb::where('postcode_id', $postcode->id)->with('council')->get();
+
+        // Redirect to step 1 if suburb is not in database
+        if (!$suburbs) {
+            Session::flash('message', 'There is no suburb attached to this postcode! try again.'); 
+            return redirect()->route('report.step1');
+        }
 
         return view('pages/step2')->with(
             [
