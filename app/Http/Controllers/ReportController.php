@@ -55,7 +55,7 @@ class ReportController extends Controller
         $suburbs = Suburb::where('postcode_id', $postcode->id)->get();
 
         // Redirect to step 1 if suburb is not in database
-        if (empty($suburbs)) {
+        if ($suburbs->isEmpty()) {
             Session::flash('message', 'There is no suburb attached to this postcode! try again.'); 
             return redirect()->route('report.step1');
         }
