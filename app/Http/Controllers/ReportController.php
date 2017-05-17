@@ -35,10 +35,10 @@ class ReportController extends Controller
             return redirect()->route('report.step1');
         }
 
-        $suburbs = Suburb::where('postcode_id', $postcode->id)->with('council')->get();
+        $suburbs = Suburb::where('postcode_id', $postcode->id)->get();
 
         // Redirect to step 1 if suburb is not in database
-        if (!$suburbs) {
+        if (empty($suburbs)) {
             Session::flash('message', 'There is no suburb attached to this postcode! try again.'); 
             return redirect()->route('report.step1');
         }
@@ -64,13 +64,14 @@ class ReportController extends Controller
             return redirect()->route('report.step2');
         }
 
-        $suburbName = Suburb::find($suburbId);
+        $suburbs = Suburb::find($suburbId);
         $postcodeSubmitted = $request->input('postcodeSubmitted');
 
         return view('pages/step3')->with(
             [
                 'postcode' => $postcodeSubmitted,
-                'suburbName' => $suburbName->name,
+                'suburbName' => $suburbs->name,
+                'councilId' => $suburbs->council_id,
                 'suburbId' => $suburbId
             ]
         );
@@ -84,17 +85,19 @@ class ReportController extends Controller
         // Get the submitted data and store in variable
         // @TODO: Check if values aren't empty
         $suburbId = $request->input('suburbId');
+        $councilId = $request->input('councilId');
         $problemTitle = $request->input('problemTitle');
         $problemDescription = $request->input('problemDescription');
         $problemName = $request->input('problemName');
         $problemImage = $request->file('problemImage')->store('public/uploads');
-        $problemImageName = $request->file('problemImage')->getClientOriginalName();
+        $problemImageName = $request->file('problemImage')->hashName();
 
         // Create new problem object
         $problem = new Problem;
 
         // Set the property for each required field
         $problem->suburb_id = $suburbId;
+        $problem->council_id = $councilId;
         $problem->title = $problemTitle;
         $problem->description = $problemDescription;
         $problem->image = $problemImageName;

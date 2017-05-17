@@ -12,7 +12,7 @@ class CouncilController extends Controller
      */
     public function index()
     {
-        $councils = Council::all();
+        $councils = Council::orderBy('name', 'ASC')->with('problems')->with('suburbs')->get();
 
         return view('pages/council')->with('councils', $councils);
     }
@@ -22,7 +22,7 @@ class CouncilController extends Controller
      */
     public function showCouncil(Request $request, $id)
     {
-        $council = Council::find($id);
+        $council = Council::with('problems')->find($id);
 
         return view('pages/council-info')->with('council', $council);
     }

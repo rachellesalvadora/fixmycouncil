@@ -22,6 +22,12 @@ Route::post('/report/submit', 'ReportController@submit')->name('report.submit');
 Route::get('/report/error', 'ReportController@error')->name('report.error');
 Route::get('/report/success', 'ReportController@success')->name('report.success');
 
+Route::get('/problem', 'ProblemController@index')->name('problem.home');
+Route::get('/problem/update', 'ProblemController@updateProblemStep1')->name('problem.update.step1');
+Route::get('/problem/update/{id}', 'ProblemController@updateProblemStep2')->name('problem.update.step2');
+Route::get('/problem/{id}', 'ProblemController@view')->name('problem.view');
+Route::get('/problem/update/submit', 'ProblemController@updateProblemSubmit')->name('problem.submit');
+
 Route::get('/problems', 'ProblemController@index')->name('view.problem');
 Route::get('/problems/{suburb}', 'ProblemController@view')->name('view.problem.suburb');
 
