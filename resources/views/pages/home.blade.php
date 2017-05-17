@@ -6,7 +6,7 @@
 
     <div class="site__heading">
         <div class="container">
-            <h1 class="display-3 hero__title">Fix My Council</h1>
+            <h1 class="display-3 hero__title">Fix My Council - Victoria</h1>
         </div>
     </div>
 
@@ -21,12 +21,10 @@
                         You can keep track of the progress of any issues and also update issues other people have submitted!
                     </p>
                     <p class="hero__description count">
-                        We have so far had 3,000 problems submitted! <br>
-                        ~1400 problems have been resolved. <br>
-                        ~800 problems are pending. <br>
+                        We have so far had <strong>{{ $problemsCount }} problems </strong> submitted across <strong>{{ $councilsCount }} Councils</strong> and <strong>{{ $suburbsCount }} Suburbs</strong> in Victoria!<br>
                     </p>
                     <p>
-                        <a href="{{ route('view.problem') }}">Click here</a> to look up your council and see what problems have been submitted!
+                        <strong><a href="{{ route('council.page') }}">Click here</a> to look up your council and see what problems have been submitted!</strong>
                     </p>
                 </div>
 

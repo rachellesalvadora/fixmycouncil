@@ -10,10 +10,13 @@
                     <a class="nav-link" href="{{ route('home.page') }}">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item {{ Request::is('*report*') ? 'active' : null }}">
-                    <a class="nav-link" href="{{ route('report.step1') }}">Report a problem</a>
+                    <a class="nav-link" href="{{ route('report.step1') }}">Report Problem</a>
                 </li>
-                <li class="nav-item {{ Request::is('*problems*') ? 'active' : null }}">
-                    <a class="nav-link " href="{{ route('view.problem') }}">View Problems</a>
+                <li class="nav-item {{ Request::is('problem/*') ? 'active' : null }}">
+                    <a class="nav-link " href="{{ route('problem.home') }}">View Problems</a>
+                </li>
+                <li class="nav-item {{ Request::is('problem/update') ? 'active' : null }}">
+                    <a class="nav-link " href="{{ route('problem.update.step1') }}">Update Problem</a>
                 </li>
                 <li class="nav-item {{ Request::is('*council*') ? 'active' : null }}">
                     <a class="nav-link" href="{{ route('council.page') }}">Councils</a>

@@ -77,7 +77,7 @@
 
                             <div class="form-group">
                                 <label for="problemName">Name</label>
-                                <input type="text" class="form-control" id="problemName" aria-describedby="emailHelp" placeholder="Enter email">
+                                <input type="text" class="form-control" id="problemName" aria-describedby="emailHelp" placeholder="Your Name">
                                 <small id="emailHelp" class="form-text text-muted">
                                     Leaving your first name is fine.
                                 </small>

@@ -5,7 +5,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Fix My Council - @yield('title')</title>
+    <title>Fix My Council Victoria - @yield('title')</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/app.css" rel="stylesheet">

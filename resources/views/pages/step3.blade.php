@@ -45,11 +45,14 @@
                 <div class="col-md-5 steps steps__3">
                     <h2>Step 3</h2>
                     <p>You'll be able to fill in this form once you've provided a postcode and suburb.</p>
-                    <form class="form my-2 my-lg-0 step__3--form" method="post" action="{{ route('report.submit') }}">
+                    <form class="form my-2 my-lg-0 step__3--form" method="post" enctype="multipart/form-data" action="{{ route('report.submit') }}">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="suburbId" value="{{ $suburbId }}"/>
+                        <input type="hidden" name="councilId" value="{{ $councilId }}"/>
                         <fieldset class="form-group">
                             <div class="form-group">
                                 <label for="problemTitle">Title</label>
-                                <input type="text" class="form-control" id="problemTitle" aria-describedby="titleHelp" placeholder="Title">
+                                <input type="text" class="form-control" id="problemTitle" name="problemTitle" aria-describedby="titleHelp" placeholder="Title">
                                 <small id="titleHelp" class="form-text text-muted">
                                     Give us a brief title of the problem
                                 </small>
@@ -57,7 +60,7 @@
 
                             <div class="form-group">
                                 <label for="problemDescription">Description</label>
-                                <textarea class="form-control" id="problemDescription" rows="3" aria-describedby="descriptionHelp"></textarea>
+                                <textarea class="form-control" id="problemDescription" name="problemDescription" rows="3" aria-describedby="descriptionHelp"></textarea>
                                 <small id="descriptionHelp" class="form-text text-muted">
                                     Describe the problem and any solutions you might want to put forward if possible.
                                 </small>
@@ -65,7 +68,7 @@
 
                             <div class="form-group">
                                 <label for="problemImage">Image</label>
-                                <input type="file" class="form-control-file" id="problemImage" aria-describedby="imageHelp">
+                                <input type="file" class="form-control-file" id="problemImage" name="problemImage" aria-describedby="imageHelp">
                                 <small id="imageHelp" class="form-text text-muted">
                                     Upload an image of the problem.
                                 </small>
@@ -73,7 +76,7 @@
 
                             <div class="form-group">
                                 <label for="problemName">Name</label>
-                                <input type="text" class="form-control" id="problemName" aria-describedby="emailHelp" placeholder="Enter email">
+                                <input type="text" class="form-control" id="problemName" name="problemName" aria-describedby="emailHelp" placeholder="Your Name">
                                 <small id="emailHelp" class="form-text text-muted">
                                     Leaving your first name is fine.
                                 </small>
