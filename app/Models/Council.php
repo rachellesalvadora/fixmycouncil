@@ -11,6 +11,11 @@ class Council extends Model
      */
     protected $table = 'councils';
 
+    public function problems()
+    {
+        return $this->hasMany('App\Models\Problem');
+    }
+
     /**
      * Return associated suburbs for council
      */

@@ -12,11 +12,19 @@ class Problem extends Model
     protected $table = 'problems';
 
     /**
+     * Get the council for the problem
+     */
+    public function council()
+    {
+        return $this->belongsTo('App\Models\Council');
+    }
+
+    /**
      * Get the postcode for the problem
      */
     public function suburb()
     {
-        return $this->belongsTo('App\Models\suburb');
+        return $this->belongsTo('App\Models\Suburb');
     }
 
     /**
