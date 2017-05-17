@@ -34,11 +34,13 @@ class HomeController extends Controller
         $problemsCount = Problem::all()->count();
         $councilsCount = Council::all()->count();
         $suburbsCount = Suburb::all()->count();
+        $problems = Problem::with('council')->with('suburb')->get();
 
         return view('pages/home')->with([
             'problemsCount' => $problemsCount,
             'councilsCount' => $councilsCount,
-            'suburbsCount' => $suburbsCount
+            'suburbsCount' => $suburbsCount,
+            'problems' => $problems
         ]);
     }
 }
