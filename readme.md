@@ -19,6 +19,7 @@ Since I haven't had as much on this as I would have liked I have the following T
 * Updating a problem (Add a comment / image to an existing problem)
 * Setting a status on problem (fixed / pending / broken)
 * Redirecting users to the council page they've just submitted a problem to
+* Google Map API Key isn't working for some reason (need to investigate)
 
 ### Built With
 ********************
