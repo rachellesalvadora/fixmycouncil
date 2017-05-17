@@ -58,7 +58,7 @@ I compared the pros and cons of these websites and found that they provide good 
 
 I have researched a website that allow people to communicate to their council regarding the issues that they want to be resolved and found <strong><a href="http://www.snapsendsolve.com/" target="_blank">Snap Send Solve</strong>.
 
-<strong><a href="http://www.snapsendsolve.com/" target="_blank">Snap Send Solve</a></strong>is a mobile application that allows you to take a photo and send it to your respective council using your email account and there's no way to view the reported issues. I've based my idea losely on this app but it is a Web Interface and allows people to view problems per council and also update them.
+<strong>Snap Send Solve</strong> is a mobile application that allows you to take a photo and send it to your respective council using your email account and there's no way to view the reported issues. I've based my idea losely on this app but it is a Web Interface and allows people to view problems per council and also update them.
 
 <hr>
 
@@ -156,7 +156,7 @@ Inspirations:
 </ul>
 
 ### NOTES
-This web application is created as part of <a href="http://www.codeforvictoria.org/" target="_blank">Code of Australia</a> Fellowship challenge
+This web application is created as part of <a href="http://www.codeforvictoria.org/" target="_blank">Code of Australia</a> Fellowship challenge.<br/>
 Custom built using the technologies listed above in the <strong>Built With</strong>s section.
 
 ### VERSIONS
